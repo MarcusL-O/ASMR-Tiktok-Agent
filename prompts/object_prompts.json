@@ -1,0 +1,14 @@
+[
+  {
+    "object": "glass globe filled with soil",
+    "material": "glass"
+  },
+  {
+    "object": "ice cube filled with fruit",
+    "material": "ice"
+  },
+  {
+    "object": "obsidian cube glowing from inside",
+    "material": "stone"
+  }
+]
