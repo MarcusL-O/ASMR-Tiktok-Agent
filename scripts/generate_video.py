@@ -3,6 +3,7 @@ from runwayml import RunwayML, TaskFailedError
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import hashlib
 
 load_dotenv()
 
@@ -33,8 +34,13 @@ def generate_video(prompt, image_path):
         video_url = task.output[0]
         print("✅ Video genererad:", video_url)
 
+        # Skapa ett säkert och kort filnamn
+        safe_prompt = ''.join(c for c in prompt[:40] if c.isalnum() or c == '_')
+        prompt_hash = hashlib.sha1(prompt.encode()).hexdigest()[:8]
+        filename = f"{safe_prompt}_{prompt_hash}.mp4"
+        output_path = Path("assets/videos") / filename
+
         # ⬇️ Spara videon lokalt
-        output_path = Path("assets/videos") / f"{prompt.replace(' ', '_')}.mp4"
         os.system(f"curl -L '{video_url}' -o {output_path}")
         return str(output_path)
 
