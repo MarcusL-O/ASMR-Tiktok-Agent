@@ -1,0 +1,4 @@
+openai
+requests
+moviepy
+python-dotenv

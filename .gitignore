@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# API-nycklar
+config.py
+.env
+
+# Miljö
+venv/
+.env/
+
+# Mediafiler
+assets/images/
+assets/videos/
+assets/sounds/
+assets/output/
+
+# OS-specifikt
+.DS_Store
+Thumbs.db
